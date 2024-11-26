@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-void Dealer::DealerPlay(const int MAX_CARD_NUM, int* alreadyPublishedCard)
+void Dealer::DealerPlay(const int MAX_CARD_NUM, int* alreadyPublishedCard, Deck deck, int* sumTurn)
 {
 	bool burst = false;
 	bool firstDealer = false;
@@ -20,26 +20,28 @@ void Dealer::DealerPlay(const int MAX_CARD_NUM, int* alreadyPublishedCard)
 	{
 		for (int j = 0; j < pullNum; j++)
 		{
-			bool ok = false;
-			int card = -1;
-			do
-			{
-				//inputCard();
-				card = pullCard();
-				for (int k = 0; k < MAX_CARD_NUM; k++)
-				{
-					if (alreadyPublishedCard[k] == -1)
-					{
-						ok = true;
-						alreadyPublishedCard[k] = card;
-						inputCard(card);
-						break;
-					}
-					if (card == alreadyPublishedCard[k]) break;
-				}
-			} while (!ok);
+			/*bool ok = false;
+			int card = -1;*/
+			//do
+			//{
+			//	//inputCard();
+			//	card = pullCard();
+			//	for (int k = 0; k < MAX_CARD_NUM; k++)
+			//	{
+			//		if (alreadyPublishedCard[k] == -1)
+			//		{
+			//			ok = true;
+			//			alreadyPublishedCard[k] = card;
+			//			inputCard(card);
+			//			break;
+			//		}
+			//		if (card == alreadyPublishedCard[k]) break;
+			//	}
+			//} while (!ok);
+			inputCard(deck, sumTurn);
+			++*sumTurn;
 			turn++;
-			setSumCard();
+			//setSumCard();
 		}
 		pullCardScore();
 		burst = judgeBurst();

@@ -22,5 +22,5 @@ public:
 	};
 
 	static const int MAX_CARD_NUM = 52;
-	int alreadyPublishedCard[MAX_CARD_NUM]; // 既に引いたカードを格納する配列
+	int alreadyPublishedCard[MAX_CARD_NUM];
 };

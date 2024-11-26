@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-void Player::PlayerPlay(const int MAX_CARD_NUM, int* alreadyPublishedCard, const int i)
+void Player::PlayerPlay(const int MAX_CARD_NUM, int* alreadyPublishedCard, const int i, Deck deck, int* sumTurn)
 {
 	int state = PLAY;
 
@@ -29,26 +29,28 @@ void Player::PlayerPlay(const int MAX_CARD_NUM, int* alreadyPublishedCard, const
 	{
 		for (int j = 0; j < pullNum; j++)
 		{
-			int card = -1;
-			bool ok = false;
-			do
-			{
-				//inputCard();
-				card = pullCard();
-				for (int k = 0; k < MAX_CARD_NUM; k++)
-				{
-					if (alreadyPublishedCard[k] == -1)
-					{
-						ok = true;
-						alreadyPublishedCard[k] = card;
-						inputCard(card);
-						break;
-					}
-					if (card == alreadyPublishedCard[k]) break;
-				}
-			} while (!ok);
+			//int card = -1;
+			//bool ok = false;
+			//do
+			//{
+			//	//inputCard();
+			//	card = pullCard();
+			//	for (int k = 0; k < MAX_CARD_NUM; k++)
+			//	{
+			//		if (alreadyPublishedCard[k] == -1)
+			//		{
+			//			ok = true;
+			//			alreadyPublishedCard[k] = card;
+			//			inputCard(card);
+			//			break;
+			//		}
+			//		if (card == alreadyPublishedCard[k]) break;
+			//	}
+			//} while (!ok);
+			inputCard(deck, sumTurn);
+			++*sumTurn;
 			turn++;
-			setSumCard();
+			//setSumCard();
 		}
 		pullCardScore();
 		burst = judgeBurst();
