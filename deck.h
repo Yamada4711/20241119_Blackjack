@@ -3,6 +3,9 @@
 class Deck
 {
 public:
+	Deck();
+	static void showSuitAndNum(int suitnum, int number);
+
 	enum Card
 	{
 		K = 0,
@@ -17,4 +20,7 @@ public:
 		SPADE = 2,
 		CLUB = 3,
 	};
+
+	static const int MAX_CARD_NUM = 52;
+	int alreadyPublishedCard[MAX_CARD_NUM]; // 既に引いたカードを格納する配列
 };

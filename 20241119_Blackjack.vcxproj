@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="dealer.cpp" />
+    <ClCompile Include="deck.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="person.cpp" />
     <ClCompile Include="player.cpp" />

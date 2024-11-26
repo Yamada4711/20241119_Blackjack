@@ -10,7 +10,7 @@ public:
 
 public:
 	int pullCard(); // カードを引くやつ
-	void inputCard(); // カードを配列に入れるやつ
+	void inputCard(int card); // カードを配列に入れるやつ
 	void pullCardScore(); // カードの数字をスコアに変換するやつ
 	bool judgeBurst(); // バーストか否かを判定するやつ
 	void showCard(bool firstDealer); // 引いたカードを表示するやつ

@@ -1,5 +1,6 @@
 #include "player.h"
 #include "dealer.h"
+#include "deck.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -24,15 +25,10 @@ void InitRand()
 
 int main()
 {
+	Deck deck;
 	InitRand();
 	Result result = OTHER;
 	const char* resultArr[] = {"Win", "Lose", "Draw", "Other"};
-	const int MAX_CARD_NUM = 52;
-	int alreadyPublishedCard[MAX_CARD_NUM]; // 既に引いたカードを格納する配列
-	for (int i = 0; i < MAX_CARD_NUM; i++)
-	{
-		alreadyPublishedCard[i] = -1;
-	}
 
 	Player player[MAX_PLAYER]; // 最大人数を固定する場合に使用
 	Dealer dealer;
@@ -95,12 +91,12 @@ int main()
 		pullNum = FIRST;
 		state = PLAY;
 	}*/
-	dealer.DealerPlay(MAX_CARD_NUM, &alreadyPublishedCard[0]); // 1ターン目
+	dealer.DealerPlay(deck.MAX_CARD_NUM, &deck.alreadyPublishedCard[0]); // 1ターン目
 	cout << endl;
 
 	for (int i = 0; i < MAX_PLAYER; i++)
 	{
-		player[i].PlayerPlay(MAX_CARD_NUM, &alreadyPublishedCard[0], i);
+		player[i].PlayerPlay(deck.MAX_CARD_NUM, &deck.alreadyPublishedCard[0], i);
 		cout << endl;
 	}
 
@@ -108,9 +104,9 @@ int main()
 	{
 		cout << endl;
 		cout << "< プレイヤー" << i + 1 << " >" << endl;
-		player[i].PlayerPlay(MAX_CARD_NUM, &alreadyPublishedCard[0], i);
+		player[i].PlayerPlay(deck.MAX_CARD_NUM, &deck.alreadyPublishedCard[0], i);
 	}
-	dealer.DealerPlay(MAX_CARD_NUM, &alreadyPublishedCard[0]);
+	dealer.DealerPlay(deck.MAX_CARD_NUM, &deck.alreadyPublishedCard[0]);
 
 	cout << "<<結果発表>>" << endl
 		<< endl

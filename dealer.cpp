@@ -10,29 +10,32 @@ void Dealer::DealerPlay(const int MAX_CARD_NUM, int* alreadyPublishedCard)
 	{
 		firstDealer = true;
 	}
-
-
-	pullCardScore();
-	burst = judgeBurst();
+	else
+	{
+		pullCardScore();
+		burst = judgeBurst();
+	}
 
 	while (!burst && getScore() < 17)
-
 	{
 		for (int j = 0; j < pullNum; j++)
 		{
 			bool ok = false;
+			int card = -1;
 			do
 			{
-				inputCard();
+				//inputCard();
+				card = pullCard();
 				for (int k = 0; k < MAX_CARD_NUM; k++)
 				{
 					if (alreadyPublishedCard[k] == -1)
 					{
 						ok = true;
-						alreadyPublishedCard[k] = getCardNum(turn);
+						alreadyPublishedCard[k] = card;
+						inputCard(card);
 						break;
 					}
-					if (getCardNum(turn) == alreadyPublishedCard[k]) break;
+					if (card == alreadyPublishedCard[k]) break;
 				}
 			} while (!ok);
 			turn++;

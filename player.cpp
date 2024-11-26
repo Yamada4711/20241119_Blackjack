@@ -29,19 +29,22 @@ void Player::PlayerPlay(const int MAX_CARD_NUM, int* alreadyPublishedCard, const
 	{
 		for (int j = 0; j < pullNum; j++)
 		{
+			int card = -1;
 			bool ok = false;
 			do
 			{
-				inputCard();
+				//inputCard();
+				card = pullCard();
 				for (int k = 0; k < MAX_CARD_NUM; k++)
 				{
 					if (alreadyPublishedCard[k] == -1)
 					{
 						ok = true;
-						alreadyPublishedCard[k] = getCardNum(turn);
+						alreadyPublishedCard[k] = card;
+						inputCard(card);
 						break;
 					}
-					if (getCardNum(turn) == alreadyPublishedCard[k]) break;
+					if (card == alreadyPublishedCard[k]) break;
 				}
 			} while (!ok);
 			turn++;

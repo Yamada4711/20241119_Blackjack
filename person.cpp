@@ -29,9 +29,9 @@ int Person::pullCard()
 //	return rand() % 4 + 1;
 //}
 
-void Person::inputCard()
+void Person::inputCard(int card)
 {
-	cardNum[sumCard] = pullCard();
+	cardNum[sumCard] = card;
 	//cardSuit[i] = pullSuit();
 	//sumCard++;
 }
@@ -57,7 +57,9 @@ void Person::showCard(bool firstDealer)
 	{
 		int suit = cardNum[i] / 13;
 		int num = cardNum[i] % 13;
-		switch (suit)
+		Deck::showSuitAndNum(suit, num);
+
+		/*switch (suit)
 		{
 		case Deck::DIAMONDS:
 			cout << "ƒ_ƒCƒ„‚Ì" << flush;
@@ -94,7 +96,7 @@ void Person::showCard(bool firstDealer)
 		default:
 			cout << num << ", " << flush;
 			break;
-		}
+		}*/
 	}
 }
 //
