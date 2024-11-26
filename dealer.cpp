@@ -11,7 +11,12 @@ void Dealer::DealerPlay(const int MAX_CARD_NUM, int* alreadyPublishedCard)
 		firstDealer = true;
 	}
 
-	do
+
+	pullCardScore();
+	burst = judgeBurst();
+
+	while (!burst && getScore() < 17)
+
 	{
 		for (int j = 0; j < pullNum; j++)
 		{
@@ -39,7 +44,7 @@ void Dealer::DealerPlay(const int MAX_CARD_NUM, int* alreadyPublishedCard)
 		{
 			break;
 		}
-	} while (!burst && getScore() < 17);
+	}
 	cout << "< ディーラー >" << endl;
 	showCard(firstDealer);
 	cout << endl;
