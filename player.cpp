@@ -16,7 +16,7 @@ void Player::PlayerPlay(const int i, Deck* deck)
 
 	if (pullNum == SECOND)
 	{
-		burst = collectResult(i);
+		burst = CollectResult(i);
 		state = Question();
 	}
 
@@ -42,11 +42,11 @@ void Player::PlayerPlay(const int i, Deck* deck)
 			//		if (card == alreadyPublishedCard[k]) break;
 			//	}
 			//} while (!ok);
-			inputCard(deck);
+			InputCard(deck);
 			turn++;
 			//setSumCard();
 		}
-		burst = collectResult(i);
+		burst = CollectResult(i);
 		if (pullNum == FIRST)
 		{
 			pullNum = SECOND;
@@ -66,14 +66,14 @@ int Player::Question()
 	return state;
 }
 
-bool Player::collectResult(int i)
+bool Player::CollectResult(int i)
 {
-	pullCardScore();
-	bool burst = judgeBurst();
+	PullCardScore();
+	bool burst = JudgeBurst();
 	cout << "< プレイヤー " << i + 1 << " >" << endl;
-	showCard(false);
+	ShowCard(false);
 	cout << endl;
-	cout << "	score > " << getScore() << endl;
+	cout << "	score > " << GetScore() << endl;
 	if (burst) cout << "バースト！" << endl;
 	cout << endl;
 	return burst;

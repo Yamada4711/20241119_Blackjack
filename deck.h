@@ -9,7 +9,7 @@ class Deck
 {
 public:
 	Deck();
-	static void showSuitAndNum(int suitnum, int number);
+	static void ShowSuitAndNum(int suitnum, int number);
 
 	enum Card
 	{

@@ -15,11 +15,11 @@ void Dealer::DealerPlay(Deck* deck)
 	}
 	else
 	{
-		pullCardScore();
-		burst = judgeBurst();
+		PullCardScore();
+		burst = JudgeBurst();
 	}
 
-	while (!burst && getScore() < 17)
+	while (!burst && GetScore() < 17)
 	{
 		for (int j = 0; j < pullNum; j++)
 		{
@@ -41,23 +41,23 @@ void Dealer::DealerPlay(Deck* deck)
 			//		if (card == alreadyPublishedCard[k]) break;
 			//	}
 			//} while (!ok);
-			inputCard(deck);
+			InputCard(deck);
 			turn++;
 			//setSumCard();
 		}
-		pullCardScore();
-		burst = judgeBurst();
+		PullCardScore();
+		burst = JudgeBurst();
 		if (pullNum == FIRST)
 		{
 			break;
 		}
 	}
 	cout << "< ディーラー >" << endl;
-	showCard(firstDealer);
+	ShowCard(firstDealer);
 	cout << endl;
 	if (pullNum == SECOND)
 	{
-		cout << "	score > " << getScore() << endl;
+		cout << "	score > " << GetScore() << endl;
 		if (burst) cout << "バースト！" << endl;
 		cout << endl;
 	}

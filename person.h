@@ -9,14 +9,14 @@ public:
 	~Person(); // 一応作ったデストラクタ
 
 public:
-	int pullCard(); // カードを引くやつ
-	void inputCard(Deck* deck); // カードを配列に入れるやつ
-	void pullCardScore(); // カードの数字をスコアに変換するやつ
-	bool judgeBurst(); // バーストか否かを判定するやつ
-	void showCard(bool firstDealer); // 引いたカードを表示するやつ
+	int PullCard(); // カードを引くやつ
+	void InputCard(Deck* deck); // カードを配列に入れるやつ
+	void PullCardScore(); // カードの数字をスコアに変換するやつ
+	bool JudgeBurst(); // バーストか否かを判定するやつ
+	void ShowCard(bool firstDealer); // 引いたカードを表示するやつ
 	//void inputSumScore(); // 合計スコアを変数に入れるやつ
 	//bool changeAce(); // Aの11を1に変換するやつ
-	int getScore() const; // スコアを渡すやつ
+	int GetScore() const; // スコアを渡すやつ
 	//void setSumCard(); // 引いたカードの枚数をセットするやつ
 	//int getCardNum(int i) const; // カードの番号を渡す
 

@@ -24,7 +24,7 @@ Person::~Person()
 	//cout << "デストラクタ" << endl;
 }
 
-int Person::pullCard()
+int Person::PullCard()
 {
 	return rand() % 52 + 1;
 }
@@ -34,7 +34,7 @@ int Person::pullCard()
 //	return rand() % 4 + 1;
 //}
 
-void Person::inputCard(Deck* deck)
+void Person::InputCard(Deck* deck)
 {
 	cardNum[sumCard] = deck->alreadyPublishedCard[deck->sumTurn];
 	//cardSuit[i] = pullSuit();
@@ -52,7 +52,7 @@ void Person::inputCard(Deck* deck)
 //	sumCard++;
 //}
 
-void Person::showCard(bool firstDealer)
+void Person::ShowCard(bool firstDealer)
 {
 	int size = 1;
 	if (!firstDealer)
@@ -63,7 +63,7 @@ void Person::showCard(bool firstDealer)
 	{
 		int suit = cardNum[i] / 13;
 		int num = cardNum[i] % 13;
-		Deck::showSuitAndNum(suit, num);
+		Deck::ShowSuitAndNum(suit, num);
 
 		/*switch (suit)
 		{
@@ -112,7 +112,7 @@ void Person::showCard(bool firstDealer)
 //	for (int i = 0; i < sumCard; i++) sumScore += cardScore[i];
 //}
 
-void Person::pullCardScore()
+void Person::PullCardScore()
 {
 	sumScore = 0;
 	for (int i = 0; i < sumCard; i++)
@@ -169,7 +169,7 @@ void Person::pullCardScore()
 //	return false;
 //}
 
-bool Person::judgeBurst() // true ならバースト、false なら続行
+bool Person::JudgeBurst() // true ならバースト、false なら続行
 {
 	//bool discoverAce;
 	if (sumScore >= 22)
@@ -181,7 +181,7 @@ bool Person::judgeBurst() // true ならバースト、false なら続行
 	return false;
 }
 
-int Person::getScore() const
+int Person::GetScore() const
 {
 	return sumScore;
 }

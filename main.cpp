@@ -109,19 +109,19 @@ int main()
 		<< endl
 		<< "< ディーラー  >" << endl
 		<< "	カード > " << flush;
-	dealer.showCard(false);
+	dealer.ShowCard(false);
 	cout << endl;
-	cout << "	スコア > " << dealer.getScore() << endl
+	cout << "	スコア > " << dealer.GetScore() << endl
 		<< endl;
 	for (int i = 0; i < size; i++)
 	{
 		cout << "< プレイヤー" << i + 1 << " >" << endl
 			<< "	カード > " << flush;
-		player[i].showCard(false);
+		player[i].ShowCard(false);
 		cout << endl;
-		cout << "	スコア > " << player[i].getScore() << " > " << flush;
-		(!player[i].judgeBurst() && player[i].getScore() > dealer.getScore()) || dealer.judgeBurst() ?  result = WIN:
-			player[i].judgeBurst() || player[i].getScore() < dealer.getScore() ? result = LOSE:
+		cout << "	スコア > " << player[i].GetScore() << " > " << flush;
+		(!player[i].JudgeBurst() && player[i].GetScore() > dealer.GetScore()) || dealer.JudgeBurst() ?  result = WIN:
+			player[i].JudgeBurst() || player[i].GetScore() < dealer.GetScore() ? result = LOSE:
 			result = DRAW;
 		cout << resultArr[result] << endl 
 			<< endl;
