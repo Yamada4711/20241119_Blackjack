@@ -1,3 +1,8 @@
+// 20241126 変更点
+// showCardのswitch文の機能をデッキクラスに移行
+// カードを引く処理を、当たりが出るまで引き続ける方法から、シャッフルしたカードが順番に引かれるように変更
+
+
 #include "person.h"
 #include <iostream>
 #include <cstdlib>
@@ -36,15 +41,15 @@ void Person::inputCard(Deck& deck, int* sumTurn)
 	sumCard++;
 }
 
-int Person::getCardNum(int i) const
-{
-	return cardNum[i];
-}
+//int Person::getCardNum(int i) const
+//{
+//	return cardNum[i];
+//}
 
-void Person::setSumCard()
-{
-	sumCard++;
-}
+//void Person::setSumCard()
+//{
+//	sumCard++;
+//}
 
 void Person::showCard(bool firstDealer)
 {

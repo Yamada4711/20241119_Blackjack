@@ -1,3 +1,6 @@
+// 20241126 変更点
+// カードの引き方を変更
+
 #include "dealer.h"
 #include <iostream>
 using namespace std;

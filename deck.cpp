@@ -1,3 +1,8 @@
+// 20241126 変更点
+// カードを事前にシャッフルするように変更
+// カードの中身を表示する方法を変更
+
+
 #include "deck.h"
 #include <iostream>
 using namespace std;

@@ -1,3 +1,8 @@
+// 20241126 変更点
+// カードの引き方を変更
+// 繰り返し行われる処理を関数化
+
+
 #include "player.h"
 
 #include <iostream>
