@@ -7,6 +7,8 @@ class Player :
 {
 public:
 	void PlayerPlay(const int i, Deck deck, int* sumTurn);
+	int Question();
+	bool collectResult(int i);
 
 private:
 	int turn = 0;
