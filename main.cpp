@@ -18,15 +18,10 @@ enum Result
 	OTHER = 3,
 };
 
-void InitRand()
-{
-	srand((unsigned int)time(NULL));
-}
-
 int main()
 {
+	srand((unsigned int)time(NULL));
 	Deck deck;
-	InitRand();
 	Result result = OTHER;
 	const char* resultArr[] = {"Win", "Lose", "Draw", "Other"};
 
