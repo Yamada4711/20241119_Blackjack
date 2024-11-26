@@ -36,7 +36,7 @@ void Person::inputCard(Deck& deck, int* sumTurn)
 	sumCard++;
 }
 
-int Person::getCardNum(const int i) const
+int Person::getCardNum(int i) const
 {
 	return cardNum[i];
 }

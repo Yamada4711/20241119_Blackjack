@@ -88,12 +88,12 @@ int main()
 		pullNum = FIRST;
 		state = PLAY;
 	}*/
-	dealer.DealerPlay(deck.MAX_CARD_NUM, &deck.alreadyPublishedCard[0], deck, &turn); // 1ターン目
+	dealer.DealerPlay(deck, &turn); // 1ターン目
 	cout << endl;
 
 	for (int i = 0; i < MAX_PLAYER; i++)
 	{
-		player[i].PlayerPlay(deck.MAX_CARD_NUM, &deck.alreadyPublishedCard[0], i, deck, &turn);
+		player[i].PlayerPlay(i, deck, &turn);
 		cout << endl;
 	}
 
@@ -101,9 +101,9 @@ int main()
 	{
 		cout << endl;
 		cout << "< プレイヤー" << i + 1 << " >" << endl;
-		player[i].PlayerPlay(deck.MAX_CARD_NUM, &deck.alreadyPublishedCard[0], i, deck, &turn);
+		player[i].PlayerPlay(i, deck, &turn);
 	}
-	dealer.DealerPlay(deck.MAX_CARD_NUM, &deck.alreadyPublishedCard[0], deck, &turn);
+	dealer.DealerPlay(deck, &turn);
 
 	cout << "<<結果発表>>" << endl
 		<< endl

@@ -18,7 +18,7 @@ public:
 	//bool changeAce(); // Aの11を1に変換するやつ
 	int getScore() const; // スコアを渡すやつ
 	void setSumCard(); // 引いたカードの枚数をセットするやつ
-	int getCardNum(const int i) const; // カードの番号を渡す
+	int getCardNum(int i) const; // カードの番号を渡す
 
 private:
 	static const int MAX_PULL = 13; // 13枚以上引いたらバーストするはず...?

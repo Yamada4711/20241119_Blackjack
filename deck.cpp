@@ -10,7 +10,7 @@ Deck::Deck()
 	}
 	for (int i = MAX_CARD_NUM - 1; i > 0; i--)
 	{
-		int index = rand() % (MAX_CARD_NUM - i) + 1;
+		int index = rand() % (MAX_CARD_NUM - i);
 		int keep = alreadyPublishedCard[i];
 		alreadyPublishedCard[i] = alreadyPublishedCard[index];
 		alreadyPublishedCard[index] = keep;

@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-void Dealer::DealerPlay(const int MAX_CARD_NUM, int* alreadyPublishedCard, Deck deck, int* sumTurn)
+void Dealer::DealerPlay(Deck deck, int* sumTurn)
 {
 	bool burst = false;
 	bool firstDealer = false;

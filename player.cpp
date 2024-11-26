@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-void Player::PlayerPlay(const int MAX_CARD_NUM, int* alreadyPublishedCard, const int i, Deck deck, int* sumTurn)
+void Player::PlayerPlay(const int i, Deck deck, int* sumTurn)
 {
 	int state = PLAY;
 
