@@ -28,7 +28,7 @@ int main()
 	Player player[MAX_PLAYER]; // 最大人数を固定する場合に使用
 	Dealer dealer;
 
-	int turn = 0;
+	//int turn = 0;
 
 	//player* player;	// 最大人数を固定しない場合に使用
 	int size = MAX_PLAYER;	// 最大人数を固定する場合はMAX_player、固定しない場合は0を入力
@@ -88,12 +88,12 @@ int main()
 		pullNum = FIRST;
 		state = PLAY;
 	}*/
-	dealer.DealerPlay(deck, &turn); // 1ターン目
+	dealer.DealerPlay(&deck); // 1ターン目
 	cout << endl;
 
 	for (int i = 0; i < MAX_PLAYER; i++)
 	{
-		player[i].PlayerPlay(i, deck, &turn);
+		player[i].PlayerPlay(i, &deck);
 		cout << endl;
 	}
 
@@ -101,9 +101,9 @@ int main()
 	{
 		cout << endl;
 		cout << "< プレイヤー" << i + 1 << " >" << endl;
-		player[i].PlayerPlay(i, deck, &turn);
+		player[i].PlayerPlay(i, &deck);
 	}
-	dealer.DealerPlay(deck, &turn);
+	dealer.DealerPlay(&deck);
 
 	cout << "<<結果発表>>" << endl
 		<< endl

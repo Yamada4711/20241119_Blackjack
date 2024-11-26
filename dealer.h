@@ -6,7 +6,7 @@ class Dealer :
 	public Person
 {
 public:
-	void DealerPlay(Deck deck, int* sumTurn);
+	void DealerPlay(Deck* deck);
 
 private:
 	int turn = 0;

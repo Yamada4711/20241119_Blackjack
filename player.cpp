@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace std;
 
-void Player::PlayerPlay(const int i, Deck deck, int* sumTurn)
+void Player::PlayerPlay(const int i, Deck* deck)
 {
 	int state = PLAY;
 
@@ -42,8 +42,7 @@ void Player::PlayerPlay(const int i, Deck deck, int* sumTurn)
 			//		if (card == alreadyPublishedCard[k]) break;
 			//	}
 			//} while (!ok);
-			inputCard(deck, sumTurn);
-			++*sumTurn;
+			inputCard(deck);
 			turn++;
 			//setSumCard();
 		}

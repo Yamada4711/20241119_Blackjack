@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-void Dealer::DealerPlay(Deck deck, int* sumTurn)
+void Dealer::DealerPlay(Deck* deck)
 {
 	bool burst = false;
 	bool firstDealer = false;
@@ -41,8 +41,7 @@ void Dealer::DealerPlay(Deck deck, int* sumTurn)
 			//		if (card == alreadyPublishedCard[k]) break;
 			//	}
 			//} while (!ok);
-			inputCard(deck, sumTurn);
-			++*sumTurn;
+			inputCard(deck);
 			turn++;
 			//setSumCard();
 		}

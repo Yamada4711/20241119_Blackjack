@@ -34,11 +34,12 @@ int Person::pullCard()
 //	return rand() % 4 + 1;
 //}
 
-void Person::inputCard(Deck& deck, int* sumTurn)
+void Person::inputCard(Deck* deck)
 {
-	cardNum[sumCard] = deck.alreadyPublishedCard[*sumTurn];
+	cardNum[sumCard] = deck->alreadyPublishedCard[deck->sumTurn];
 	//cardSuit[i] = pullSuit();
 	sumCard++;
+	deck->sumTurn++;
 }
 
 //int Person::getCardNum(int i) const
