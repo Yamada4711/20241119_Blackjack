@@ -53,7 +53,7 @@ void Dealer::DealerPlay(Deck* deck)
 		}
 	}
 	cout << "< ディーラー >" << endl;
-	ShowCard(firstDealer);
+	ShowCard();
 	cout << endl;
 	if (pullNum == SECOND)
 	{
@@ -64,5 +64,20 @@ void Dealer::DealerPlay(Deck* deck)
 	else if (pullNum == FIRST)
 	{
 		pullNum = SECOND;
+	}
+}
+
+void Dealer::ShowCard()
+{
+	int size = 1;
+	if (sumCard != 2)
+	{
+		size = sumCard;
+	}
+	for (int i = 0; i < size; i++)
+	{
+		int suit = cardNum[i] / 13;
+		int num = cardNum[i] % 13;
+		Deck::ShowSuitAndNum(suit, num);
 	}
 }

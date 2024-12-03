@@ -1,3 +1,6 @@
+// 20241203 変更点
+// ShowCardメンバ関数を変更
+
 #include "player.h"
 #include "dealer.h"
 #include "deck.h"
@@ -109,7 +112,7 @@ int main()
 		<< endl
 		<< "< ディーラー  >" << endl
 		<< "	カード > " << flush;
-	dealer.ShowCard(false);
+	dealer.ShowCard();
 	cout << endl;
 	cout << "	スコア > " << dealer.GetScore() << endl
 		<< endl;
@@ -117,7 +120,7 @@ int main()
 	{
 		cout << "< プレイヤー" << i + 1 << " >" << endl
 			<< "	カード > " << flush;
-		player[i].ShowCard(false);
+		player[i].ShowCard();
 		cout << endl;
 		cout << "	スコア > " << player[i].GetScore() << " > " << flush;
 		(!player[i].JudgeBurst() && player[i].GetScore() > dealer.GetScore()) || dealer.JudgeBurst() ?  result = WIN:

@@ -71,10 +71,22 @@ bool Player::CollectResult(int i)
 	PullCardScore();
 	bool burst = JudgeBurst();
 	cout << "< プレイヤー " << i + 1 << " >" << endl;
-	ShowCard(false);
+	ShowCard();
 	cout << endl;
 	cout << "	score > " << GetScore() << endl;
 	if (burst) cout << "バースト！" << endl;
 	cout << endl;
 	return burst;
+}
+
+void Player::ShowCard()
+{
+	int size = sumCard;
+
+	for (int i = 0; i < size; i++)
+	{
+		int suit = cardNum[i] / 13;
+		int num = cardNum[i] % 13;
+		Deck::ShowSuitAndNum(suit, num);
+	}
 }

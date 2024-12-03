@@ -52,59 +52,59 @@ void Person::InputCard(Deck* deck)
 //	sumCard++;
 //}
 
-void Person::ShowCard(bool firstDealer)
-{
-	int size = 1;
-	if (!firstDealer)
-	{
-		size = sumCard;
-	}
-	for (int i = 0; i < size; i++)
-	{
-		int suit = cardNum[i] / 13;
-		int num = cardNum[i] % 13;
-		Deck::ShowSuitAndNum(suit, num);
-
-		/*switch (suit)
-		{
-		case Deck::DIAMONDS:
-			cout << "ダイヤの" << flush;
-			break;
-		case Deck::HEART:
-			cout << "ハートの" << flush;
-			break;
-		case Deck::SPADE:
-			cout << "スペードの" << flush;
-			break;
-		case Deck::CLUB:
-			cout << "クラブの" << flush;
-			break;
-		default:
-			break;
-		}
-		switch (num)
-		{
-		case Deck::A:
-			cout << "A, " << flush;
-			break;
-
-		case Deck::J:
-			cout << "J, " << flush;
-			break;
-
-		case Deck::Q:
-			cout << "Q, " << flush;
-			break;
-
-		case Deck::K:
-			cout << "K, " << flush;
-			break;
-		default:
-			cout << num << ", " << flush;
-			break;
-		}*/
-	}
-}
+//void Person::ShowCard(bool firstDealer)
+//{
+//	int size = 1;
+//	if (!firstDealer)
+//	{
+//		size = sumCard;
+//	}
+//	for (int i = 0; i < size; i++)
+//	{
+//		int suit = cardNum[i] / 13;
+//		int num = cardNum[i] % 13;
+//		Deck::ShowSuitAndNum(suit, num);
+//
+//		/*switch (suit)
+//		{
+//		case Deck::DIAMONDS:
+//			cout << "ダイヤの" << flush;
+//			break;
+//		case Deck::HEART:
+//			cout << "ハートの" << flush;
+//			break;
+//		case Deck::SPADE:
+//			cout << "スペードの" << flush;
+//			break;
+//		case Deck::CLUB:
+//			cout << "クラブの" << flush;
+//			break;
+//		default:
+//			break;
+//		}
+//		switch (num)
+//		{
+//		case Deck::A:
+//			cout << "A, " << flush;
+//			break;
+//
+//		case Deck::J:
+//			cout << "J, " << flush;
+//			break;
+//
+//		case Deck::Q:
+//			cout << "Q, " << flush;
+//			break;
+//
+//		case Deck::K:
+//			cout << "K, " << flush;
+//			break;
+//		default:
+//			cout << num << ", " << flush;
+//			break;
+//		}*/
+//	}
+//}
 //
 //void Person::inputSumScore()
 //{

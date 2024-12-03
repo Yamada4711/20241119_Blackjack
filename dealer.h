@@ -7,6 +7,7 @@ class Dealer :
 {
 public:
 	void DealerPlay(Deck* deck);
+	virtual void ShowCard();
 
 private:
 	int turn = 0;
